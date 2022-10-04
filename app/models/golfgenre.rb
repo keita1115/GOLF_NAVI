@@ -1,0 +1,2 @@
+class Golfgenre < ApplicationRecord
+end
