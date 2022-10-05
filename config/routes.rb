@@ -1,8 +1,40 @@
 Rails.application.routes.draw do
-  get '/top' => 'homes#top'
 
-  devise_for :admins
-  devise_for :users
+ namespace :admin do
+    root to: 'homes#top'
+    resources :golfs
+    resources :users
+    resources :genres
+    resources :comments
+  end
+
+
+ scope module: :public do
+   root to: 'homes#top'
+   get '/about' => 'homes#about'
+   resources :users do
+   get 'users/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
+   patch 'users/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
+ end
+   resources :golfs
+   resources :favorites
+   resources :searches
+ end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+# 管理者用
+# URL /admin/sign_in ...
+  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+  sessions: "admin/sessions"
+}
+
+# 顧客用
+# URL /users/sign_in ...
+  devise_for :users,skip: [:passwords], controllers: {
+  registrations: "public/registrations",
+  sessions: 'public/sessions'
+}
+
 end
