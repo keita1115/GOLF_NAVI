@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
  namespace :admin do
     root to: 'homes#top'
-    resources :golfs
+    resources :courses
     resources :users
     resources :genres
     resources :comments
@@ -29,7 +29,9 @@ Rails.application.routes.draw do
    get 'users/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
    patch 'users/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
  end
-   resources :golfs
+   resources :courses
+   resources :favorites
+   resources :searches
  end
 
 

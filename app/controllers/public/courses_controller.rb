@@ -1,5 +1,5 @@
-class Public::GolfsController < ApplicationController
-  
+class Public::CoursesController < ApplicationController
+
 def index
 end
 
