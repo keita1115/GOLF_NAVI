@@ -1,7 +1,15 @@
 class Public::CoursesController < ApplicationController
 
 def index
- 
+  @genres = Genre.all
+  #ジャンルIDあるとき
+    if params[:genre_id]
+      @genre = Genre.find(params[:genre_id])
+      @courses = @genre.courses
+    #ジャンルIDないとき
+    else
+      @courses = Course.all
+    end
 end
 
 def new
@@ -16,6 +24,7 @@ end
 
 def show
   @course = Course.find(params[:id])
+  @genres = Genre.all
 end
 
 def edit
@@ -27,10 +36,10 @@ def update
    redirect_to course_path(@course.id)
 end
 
-  private
+private
 
-  def course_params
-    params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score)
-  end
+def course_params
+  params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score)
+end
 
 end
