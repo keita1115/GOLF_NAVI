@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h3 class="my-4 mt-5">ゴルフ場詳細</h3>
+
+      <div class="text-center">
+        <!--ゴルフ場画像-->
+        <%= image_tag @course.image, size: "350x220" %>
+    　</div>
+
+
+      <!--ゴルフ場詳細-->
+      <div class="text-center">
+        <br>
+        <table class="table">
+          <tr>
+            <th>ゴルフ場名</th>
+            <td><%= @course.title %></td>
+          </tr>
+
+          <tr>
+            <th>ゴルフ場説明</th>
+            <td><%= @course.body %></td>
+          </tr>
+
+          <tr>
+            <th>スコア</th>
+            <td><%= @course.score %></td>
+          </tr>
+
+          <tr>
+            <th>エリア</th>
+            <td><%= @course.genre_id %></td>
+          </tr>
+        </table>
+      </div>
+
+       <div class="text-center">
+        <table class="table">
+          <!--編集ボタン-->
+          <th><%= link_to "編集する", edit_course_path(@course), class: 'btn btn-success' %></th>
+          <!--あとで削除-->
+          <th><%= link_to "削除する", course_path(@course), method: :delete, data: {confirm:  "本当に削除しますか？"}, class: "btn btn-danger" %></th>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
