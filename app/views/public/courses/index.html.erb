@@ -6,13 +6,13 @@
     </div>
     <div class="col-8 ml-2">
       <!--countメソッドの使い方-->
-      <h3 class="mb-4">ゴルフ場一覧(全<%= @courses %>件)</h3>
+      <h3 class="mb-4">ゴルフ場一覧 </h3>
 
       <!--商品一覧-->
       <div class="contents" style="display:flex; flex-wrap:wrap;">
         <% @courses.each do |course| %>
           <div class="mr-4 mt-4">
-            <%= link_to course_path(course) do %>
+              <%= link_to course_path(course) do %>
              <%= image_tag course.image, size:"200x120" %>
             <% end %>
             <p class="text-center"><strong><%= course.title %></strong></p>
