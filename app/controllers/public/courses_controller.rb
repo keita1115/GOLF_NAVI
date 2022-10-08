@@ -21,6 +21,7 @@ def show
 end
 
 def edit
+   @course = Course.find(params[:id])
 end
 
 def update
@@ -29,10 +30,16 @@ def update
    redirect_to course_path(@course.id)
 end
 
+def destroy
+  @course = Course.find(params[:id])
+  @course.destroy
+   redirect_to courses_path(@course)
+end
+
 private
 
 def course_params
   params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score).merge(user_id: current_user.id)
-end 
+end
 
 end
