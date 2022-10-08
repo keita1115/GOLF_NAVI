@@ -31,9 +31,10 @@ def update
 end
 
 def destroy
+  @courses = Course.all
   @course = Course.find(params[:id])
   @course.destroy
-   redirect_to courses_path(@course)
+   redirect_to courses_path(@course.id)
 end
 
 private
