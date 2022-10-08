@@ -12,8 +12,8 @@
       <div class="contents" style="display:flex; flex-wrap:wrap;">
         <% @courses.each do |course| %>
           <div class="mr-4 mt-4">
-              <%= link_to course_path(course) do %>
-             <%= image_tag course.image, size:"200x120" %>
+            <%= link_to course_path(course.id) do %>
+            <%= image_tag course.image, size:"200x120" %>
             <% end %>
             <p class="text-center"><strong><%= course.title %></strong></p>
           </div>

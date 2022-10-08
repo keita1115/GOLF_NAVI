@@ -2,14 +2,7 @@ class Public::CoursesController < ApplicationController
 
 def index
   @genres = Genre.all
-  #ジャンルIDあるとき
-    if params[:genre_id]
-      @genre = Genre.find(params[:genre_id])
-      @courses = @genre.courses
-    #ジャンルIDないとき
-    else
-      @courses = Course.all
-    end
+  @courses = Course.all
 end
 
 def new
@@ -19,7 +12,7 @@ end
 def create
   @course = Course.new(course_params)
   @course.save
-   redirect_to course_path(@course.id)
+   redirect_to courses_path
 end
 
 def show
@@ -39,7 +32,7 @@ end
 private
 
 def course_params
-  params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score)
-end
+  params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score).merge(user_id: current_user.id)
+end 
 
 end
