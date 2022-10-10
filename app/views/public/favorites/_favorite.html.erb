@@ -1,0 +1,9 @@
+<% if course.favorites?(current_user) %>
+    <%= link_to course_favorites_path(course), method: :delete, remote: true do %>
+      ★<%= course.favorites.count %>
+    <% end %>
+  <% else %>
+    <%= link_to course_favorites_path(course), method: :post, remote: true do %>
+      ☆<%= course.favorites.count %> お気に入り
+    <% end %>
+<% end %>

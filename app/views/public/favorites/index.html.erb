@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-8 ml-2">
+      <div class="contents" style="display:flex; flex-wrap:wrap;">
+        <% @favorites.each do |favorite| %>
+          <div class="mr-4 mt-4">
+            <%= link_to course_path(favorite.course_id) do %>
+              <%= image_tag favorite.course.image, size:"150x120" %>
+            <% end %>
+            <p class="text-center"><strong><%= favorite.course.title %></strong></p>
+          </div>
+          <!--<= render "public/favorites/favorite",course: course%>-->
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

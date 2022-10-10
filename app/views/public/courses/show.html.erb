@@ -18,6 +18,11 @@
           </tr>
 
           <tr>
+            <th>住所</th>
+            <td><%= @course.address %></td>
+          </tr>
+
+          <tr>
             <th>ゴルフ場説明</th>
             <td><%= @course.body %></td>
           </tr>
@@ -30,6 +35,10 @@
           <tr>
             <th>エリア</th>
             <td><%= @course.genre_id %></td>
+          </tr>
+
+          <tr>
+            <%= render "public/favorites/favorite", course: @course%>
           </tr>
         </table>
       </div>

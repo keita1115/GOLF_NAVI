@@ -6,19 +6,24 @@
       <!--form_with記述-->
       <%= form_with model: @course, url: course_path(@course), method: :patch, local: true do |f| %>
 
-  <!--商品画像-->
+  <!--ゴルフ場画像-->
   <div class="field text-center mt-4">
     <%= f.label :"ゴルフ場画像" %>
     <%= f.file_field :image, accept: "image/*" %>
   </div>
 
-  <!--商品名-->
+  <!--ゴルフ場名-->
   <div class="field text-center mt-4">
     <%= f.label :"ゴルフ場名", class: "mr-3" %>
     <%= f.text_field :title %>
   </div>
 
-  <!--商品説明-->
+  <div class="field text-center mt-4">
+    <%= f.label :"住所", class: "mr-3" %>
+    <%= f.text_area :address %>
+  </div>
+
+  <!--スコア-->
   <div class="field text-center mt-4">
     <%= f.label :"スコア", class: "mr-3" %>
     <%= f.text_field :score %>

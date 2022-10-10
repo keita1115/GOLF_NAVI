@@ -1,8 +1,13 @@
 class Public::CoursesController < ApplicationController
 
 def index
-  @genres = Genre.all
-  @courses = Course.all
+    @genres = Genre.all
+  if params[:genre_id]
+     @genre = Genre.find(params[:genre_id])
+     @courses = @genre.courses
+  else
+     @courses = Course.all
+  end
 end
 
 def new
@@ -17,7 +22,10 @@ end
 
 def show
   @course = Course.find(params[:id])
-  @genres = Genre.all
+
+  favorites = Favorite.where(user_id: current_user.id).pluck(:course_id)
+  @favorite_list = Course.find(favorites)
+
 end
 
 def edit
@@ -40,7 +48,7 @@ end
 private
 
 def course_params
-  params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score).merge(user_id: current_user.id)
+  params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score, :address).merge(user_id: current_user.id)
 end
 
 end

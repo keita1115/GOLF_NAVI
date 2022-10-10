@@ -29,10 +29,13 @@ Rails.application.routes.draw do
    get 'users/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
    patch 'users/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
  end
-   resources :courses
-   resources :favorites
-   resources :searches
- end
+    resources :courses do
+      resource :favorites, only: [ :create, :destroy]
+    end
+    resources :favorites, only: [:index]
+    resources :searches
+  end
+
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
