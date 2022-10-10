@@ -4,6 +4,7 @@ class Course < ApplicationRecord
     belongs_to :user, optional: true
     belongs_to :genre, optional: true
     has_many :favorites ,dependent: :destroy
+    has_many :comments, dependent: :destroy
 # def get_course_image
 #  (image.attached?) ? image : "no_image.jpg"
 # end
