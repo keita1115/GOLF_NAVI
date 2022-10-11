@@ -40,6 +40,16 @@
           <tr>
             <%= render "public/favorites/favorite", course: @course%>
           </tr>
+          <!--部分テンプレート化-->
+          <!--コメントフォーム-->
+          <div class="new-comment">
+           <%= render 'comments/form', course: @course, comment: @comment %>
+          </div>
+           <!--コメント一覧部分-->
+           <!--divタグのclassをid="comments_area"に変更-->
+           <div id="comments_area">
+           <%= render 'comments/course_comments', course @course %>
+          </div>
         </table>
       </div>
 

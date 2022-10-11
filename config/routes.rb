@@ -30,7 +30,8 @@ Rails.application.routes.draw do
    patch 'users/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
  end
     resources :courses do
-      resource :favorites, only: [ :create, :destroy]
+    resource :favorites, only: [ :create, :destroy]
+    resources :comments, only: [ :create, :destroy]
     end
     resources :favorites, only: [:index]
     resources :searches

@@ -23,6 +23,8 @@ end
 def show
   @course = Course.find(params[:id])
 
+  @comment = Comment.new
+
   favorites = Favorite.where(user_id: current_user.id).pluck(:course_id)
   @favorite_list = Course.find(favorites)
 
