@@ -4,6 +4,7 @@ class Public::CommentsController < ApplicationController
     @course = Course.find(params[:course_id])
     @comment = current_user.comments.new(comment_params)
     @comment.course_id = @course.id
+    @comment.user_id = current_user.id
     @comment.save
     #render :comment
   end

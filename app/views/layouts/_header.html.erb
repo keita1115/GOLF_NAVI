@@ -1,77 +1,79 @@
-<nav class = "navbar navbar-expand-lg navbar-light bg-light">
-   <div class = "container">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-blue bg-dark">
+    <div class="container">
       <a class="navbar-brand" href="/"><span>GOLF NAVI</span></a>
-       <div class = "navbar-nav ml-5">
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+      <script src="https://kit.fontawesome.com/801a1ac1e5.js" crossorigin="anonymous"></script>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-         <ul class="navbar-nav ml-auto">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
              <li>
-               <%= link_to user_path(current_user),class: 'btn' do%>
-                  マイページ
+               <%= link_to user_path(current_user),class: 'nav-link text-light' do%>
+                 <i class="fa-solid fa-user"></i>マイページ
                <% end %>
              </li>
              <li>
-               <%= link_to courses_path,class: 'btn' do%>
-                  ゴルフ場一覧
+               <%= link_to courses_path,class: 'nav-link text-light' do%>
+                <i class="fa-brands fa-gofore"></i>ゴルフ場一覧
                <% end %>
              </li>
              <li>
-               <%= link_to new_course_path,class: 'btn' do%>
-                  新規ゴルフ場投稿
+               <%= link_to new_course_path,class: 'nav-link text-light' do%>
+                  <i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i>新規ゴルフ場投稿
                <% end %>
              </li>
              <li>
-               <%= link_to favorites_path,class: 'btn' do%>
-                  お気に入り一覧
+               <%= link_to favorites_path,class: 'nav-link text-light' do%>
+                <i class="fa-solid fa-star"></i>お気に入り一覧
                <% end %>
              </li>
              <li>
-               <%= link_to destroy_user_session_path, method: :delete,class: 'btn' do%>
-                  ログアウト
+               <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do%>
+                  <i class="fas fa-sign-out-alt"></i>ログアウト
                <% end %>
              </li>
             <% elsif admin_signed_in? %>
              <li>
-               <%= link_to admin_root_path,class: 'btn' do%>
+               <%= link_to admin_root_path,class: 'nav-link text-light' do%>
                   ゴルフ場一覧
                <% end %>
              </li>
              <li>
-               <%= link_to admin_users_path,class: 'btn' do%>
+               <%= link_to admin_users_path,class: 'nav-link text-light' do%>
                   ユーザー一覧
                <% end %>
              </li>
              <li>
-               <%= link_to admin_genres_path,class: 'btn' do%>
+               <%= link_to admin_genres_path,class: 'nav-link text-light' do%>
                   ジャンル一覧
                <% end %>
              </li>
              <li>
-               <%= link_to destroy_admin_session_path, method: :delete,class: 'btn' do%>
-                  ログアウト
+               <%= link_to destroy_admin_session_path, method: :delete,class: 'nav-link text-light' do%>
+                   <i class="fas fa-sign-out-alt"></i>ログアウト
                <% end %>
              </li>
             <% else %>
              <li>
-               <%= link_to  about_path,class: 'btn' do%>
-                  About
+               <%= link_to  about_path,class: 'nav-link text-light' do%>
+                  <i class="fas fa-link"></i>About
                <% end %>
              </li>
              <li>
-               <%= link_to new_user_registration_path,class: 'btn' do%>
-                  新規登録
+               <%= link_to new_user_registration_path,class: 'nav-link text-light' do%>
+                   <i class="fas fa-user-plus"></i>新規登録
                <% end %>
              </li>
              <li>
-               <%= link_to new_user_session_path,class: 'btn ' do%>
-                  ログイン
+               <%= link_to new_user_session_path,class: 'nav-link text-light' do%>
+                   <i class="fas fa-sign-in-alt"></i>ログイン
                <% end %>
              </li>
             <% end %>
           </ul>
       </div>
-   </div>
-</nav>
+  　</div>
+　</nav>
+</header>

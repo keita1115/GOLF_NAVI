@@ -2,8 +2,8 @@
         <% course.comments.each do |comment| %>
           <tr>
             <td>
-              <%= link_to (comment.user) do %>
-               <%= comment.user.name %>
+             <%= link_to user_path(comment.user) do %>
+             <%= comment.user.name %>
               <% end %>
             </td>
             <td>
