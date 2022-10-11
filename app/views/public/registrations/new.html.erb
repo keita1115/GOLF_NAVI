@@ -1,34 +1,55 @@
-<h2>Sign up</h2>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-8 offset-2'>
+      <h3 class="my-4 mt-5">新規登録</h3>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_with model: @user, url: user_registration_path do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name"%>
-  </div>
+  <table class="table table-borderless table-sm">
+      <div class="field">
+        <tr>
+        <td><%= f.label :"名前" %></td>
+        <td> <%= f.text_field :name %></td>
+        </tr>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+      <div class="field">
+        <tr>
+        <td><%= f.label :"メールアドレス" %></td>
+        <td><%= f.text_field :email %></td>
+        </tr>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <tr>
+        <td><%= f.label :"パスワード" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <% end %></td>
+        <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+        </tr>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <tr>
+        <td><%= f.label :"パスワード(確認用)" %></td>
+        <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
+        </tr>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="actions">
+        <td></td>
+        <td><%= f.submit "新規登録",class:"btn btn-primary px-5 mt-4" %></td>
+      </div>
+    </table>
+  <% end %>
 
-<%= render "public/shared/links" %>
+    <h4 class="text-right">既に登録済みの方</h4>
+      <div class="text-right">
+        <%= link_to "こちら", new_user_session_path %>からログインしてください。
+      </div>
+    </div>
+  </div>
+</div>
+

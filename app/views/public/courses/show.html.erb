@@ -33,16 +33,11 @@
           </tr>
 
           <tr>
-            <th>エリア</th>
-            <td><%= @course.genre_id %></td>
-          </tr>
-
-          <tr>
             <%= render "public/favorites/favorite", course: @course%>
           </tr>
-          <td id= "count">
+          <tr>
             <%= render 'public/comments/comment_count', course: @course %>
-          </td>
+          </tr>
 
         </table>
       </div>
