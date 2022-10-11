@@ -1,0 +1,19 @@
+      <table>
+        <% course.comments.each do |comment| %>
+          <tr>
+            <td>
+              <%= link_to (comment.user) do %>
+               <%= comment.user.name %>
+              <% end %>
+            </td>
+            <td>
+              <%= comment.comment %>
+            </td>
+            <% if comment.user == current_user %>
+             <td>
+               <%= link_to "削除", course_comment_path(comment.course, comment), method: :delete, remote: true, class:"btn btn-danger" %>
+             </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>

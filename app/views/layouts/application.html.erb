@@ -13,10 +13,6 @@
  <body>
    <%= render "layouts/header" %>
     <main>
-     <!--フラッシュメッセージの部分をdivタグで囲む-->
-      <div id="flash-message">
-       <%= render 'layouts/flash' %>
-      </div>
      <%= yield %>
    </main>
   </body>

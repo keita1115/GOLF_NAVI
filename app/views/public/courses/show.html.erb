@@ -40,16 +40,10 @@
           <tr>
             <%= render "public/favorites/favorite", course: @course%>
           </tr>
-          <!--部分テンプレート化-->
-          <!--コメントフォーム-->
-          <div class="new-comment">
-           <%= render 'comments/form', course: @course, comment: @comment %>
-          </div>
-           <!--コメント一覧部分-->
-           <!--divタグのclassをid="comments_area"に変更-->
-           <div id="comments_area">
-           <%= render 'comments/course_comments', course @course %>
-          </div>
+          <td id= "count">
+            <%= render 'public/comments/comment_count', course: @course %>
+          </td>
+
         </table>
       </div>
 
@@ -62,6 +56,11 @@
           <th><%= link_to "削除する", course_path(@course), method: :delete, data: {confirm:  "本当に削除しますか？"}, class: "btn btn-danger" %></th>
           <% end %>
         </table>
+         <div id="comment_list">
+         <%= render 'public/comments/comment_list', course: @course %>
+         </div>
+         <%= render 'public/comments/comment_form', course: @course, comment: @comment %>
+       </div>
       </div>
     </div>
   </div>
