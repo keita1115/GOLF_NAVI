@@ -6,7 +6,11 @@ Rails.application.routes.draw do
   sessions: "admin/sessions"
 }
 
-# 顧客用
+ devise_scope :user do
+    post 'users/guest_sign_in', to: 'public/sessions#guest_sign_in'
+ end
+
+# user用
 # URL /users/sign_in ...
   devise_for :users,skip: [:passwords], controllers: {
   registrations: "public/registrations",
@@ -37,9 +41,6 @@ Rails.application.routes.draw do
     resources :favorites, only: [:index]
     resources :searches
   end
-
-
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 end

@@ -28,6 +28,11 @@
           <p class="text-center"><strong><%= course.title %></strong></p>
         </div>
       <% end %>
+      <% if @user.name != "guestuser" %>
+        <div class='row'>
+        <%= link_to '',edit_user_path(user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{user.id}" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

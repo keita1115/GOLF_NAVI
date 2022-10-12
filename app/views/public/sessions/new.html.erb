@@ -2,6 +2,10 @@
   <div class='row'>
     <div class='col-md-8 offset-2'>
       <h3 class="my-4 mt-5">ログイン</h3>
+      
+       <div class="field text-center mb-4">
+          <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-secondary sign_in", method: :post %>
+        </div>
 
         <p class="text-center mb-4">会員の方はこちらからログイン</p>
 
