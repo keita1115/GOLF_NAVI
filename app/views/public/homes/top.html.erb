@@ -1,0 +1,47 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3">
+      <!--部分テンプレート-->
+    <%= render "public/courses/genre_search", genres: @genres %>
+    </div>
+
+    <div class="col-8 ml-2">
+      <div class = "top-image ml-4">
+        <%= image_tag "19F07158-B4DC-43D9-BC9F-2FA0707C115E_1_105_c.jpeg", size:"640×426" %>
+          <p style="position:absolute; top:130px; left:180px; background-color:rgba(0,0,0,0.5); color:#FFF;">
+            <br>
+              ようこそGOLF NAVIへ！<br>
+              このサイトは、ゴルフ場コミュニティサイトになります。<br>
+              会員でない方もゲスト閲覧はできますが、<br>
+              投稿するには会員登録が必要になります。<br>
+            <br>
+          </p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-10">
+            <table class="table mt-4">
+              <thead>
+                <tr>
+                  <th>最新投稿ゴルフ場一覧</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+        <div class="contents" style="display:flex; flex-wrap:wrap;">
+          <% @courses.each do |course| %>
+            <div class="mr-4 mt-4">
+              <%= link_to course_path(course) do %>
+                <%= image_tag course.image, size:"200x120" %>
+              <% end %>
+              <p class="text-center"><strong><%= course.title %></strong></p>
+            </div>
+          <% end %>
+        </div>
+        <p class="text-right"><strong><%= link_to "全てのゴルフ場を見る",courses_path %></strong></p>
+      </div>
+    </div>
+  </div>
+</div>
