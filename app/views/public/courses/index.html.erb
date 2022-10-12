@@ -28,7 +28,9 @@
           <div class="mr-4 mt-4">
             <%= link_to course_path(course.id) do %>
              <% if course.image.attached? %>
-              <%= image_tag course.image, size:"200x120" %>
+               <%= image_tag course.image, size:"200x120" %>
+             <% else %>
+               <%= image_tag "e_others_501.jpeg" %>
              <% end %>
              <% end %>
             <p class="text-center"><strong><%= course.title %></strong></p>
