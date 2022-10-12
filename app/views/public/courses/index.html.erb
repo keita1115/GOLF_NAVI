@@ -1,3 +1,13 @@
+ <%= form_with url: searches_path, method: :get, local: true do |f| %>
+　<%= f.text_field :keyword, value: @keyword %>
+  　<%= f.submit "検索" %>
+      <% end %>
+    </div>
+    <div class="post-list">
+    <% @courses.each do |course| %>
+    <% end %>
+  　</div>
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-3">
@@ -7,7 +17,7 @@
     <div class="col-8 ml-2">
       <!--countメソッドの使い方-->
       <h3 class="mb-4">ゴルフ場一覧 </h3>
-
+      
       <!--ゴルフ場一覧-->
       <div class="contents" style="display:flex; flex-wrap:wrap;">
         <% @courses.each do |course| %>

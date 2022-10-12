@@ -47,6 +47,12 @@ def destroy
    redirect_to courses_path(@course.id)
 end
 
+def search
+  @courses = Course.search(params[:keyword])
+  @keyword = params[:keyword]
+  render "index"
+end
+
 private
 
 def course_params
