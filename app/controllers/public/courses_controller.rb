@@ -48,6 +48,7 @@ def destroy
 end
 
 def search
+  @genres = Genre.all
   @courses = Course.search(params[:keyword])
   @keyword = params[:keyword]
   render "index"
