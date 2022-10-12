@@ -27,12 +27,15 @@
         <% @courses.each do |course| %>
           <div class="mr-4 mt-4">
             <%= link_to course_path(course.id) do %>
-            <%= image_tag course.image, size:"200x120" %>
-            <% end %>
+             <% if course.image.attached? %>
+              <%= image_tag course.image, size:"200x120" %>
+             <% end %>
+             <% end %>
             <p class="text-center"><strong><%= course.title %></strong></p>
           </div>
         <% end %>
       </div>
+       <p class="text-center"><strong> <%= paginate @courses %></strong></p>
     </div>
   </div>
 </div>

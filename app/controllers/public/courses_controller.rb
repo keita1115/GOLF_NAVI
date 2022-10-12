@@ -4,9 +4,9 @@ def index
     @genres = Genre.all
   if params[:genre_id]
      @genre = Genre.find(params[:genre_id])
-     @courses = @genre.courses
+     @courses = @genre.courses.page(params[:page]).per(9)
   else
-     @courses = Course.all
+     @courses = Course.all.page(params[:page]).per(9)
   end
 end
 
