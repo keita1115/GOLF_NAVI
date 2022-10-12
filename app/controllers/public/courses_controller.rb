@@ -49,7 +49,7 @@ end
 
 def search
   @genres = Genre.all
-  @courses = Course.search(params[:keyword])
+  @courses = Course.search(params[:keyword]).page(params[:page])
   @keyword = params[:keyword]
   render "index"
 end
