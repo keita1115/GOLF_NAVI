@@ -32,11 +32,13 @@
           </tr>
 
           <tr>
+            
             <th>スコア</th>
             <td><%= @course.score %></td>
           </tr>
 
           <tr>
+            <div id = "favorite_buttons_<%= @course.id %>">
             <%= render "public/favorites/favorite", course: @course%>
           </tr>
           <tr>

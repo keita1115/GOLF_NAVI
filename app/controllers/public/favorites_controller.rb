@@ -11,14 +11,12 @@ end
 def destroy
   @favorite = Favorite.find_by(user_id: current_user.id, course_id: @course.id)
   @favorite.destroy
-   redirect_to course_path(params[:course_id])
 end
 
 def create
   if @course.user_id != current_user.id
      @favorite = Favorite.create(user_id: current_user.id, course_id: @course.id)
      @favorite.save
-      redirect_to course_path(params[:course_id])
   end
 end
 
