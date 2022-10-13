@@ -31,8 +31,8 @@ Rails.application.routes.draw do
    get '/about' => 'homes#about'
    get 'searches' => 'courses#search'
    resources :users do
-   get 'users/unsubscribe' => 'customers#unsubscribe', as: 'unsubscribe'
-   patch 'users/withdrawal' => 'customers#withdrawal', as: 'withdrawal'
+   get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
+   patch 'users/withdrawal' => 'users#withdrawal', as: 'withdrawal'
  end
     resources :courses do
     resource :favorites, only: [ :create, :destroy]

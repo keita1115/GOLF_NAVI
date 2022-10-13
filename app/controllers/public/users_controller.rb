@@ -19,6 +19,14 @@ def update
    redirect_to user_path(current_user)
 end
 
+# def withdrawal
+  # @user = current_user
+  # @user.update(is_valid: false)
+  # reset_session
+  # flash[:notice] = "退会処理を行いました"
+  # redirect_to root_path
+# end
+
 
 def user_params
   params.require(:user).permit(:email, :name)

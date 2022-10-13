@@ -10,6 +10,7 @@
           <tr class="form-group">
            <th><%= f.label :"メールアドレス"%></th>
            <th><%= f.email_field :email,autofocus: true, class: "form-control user.email" %></th>
+           <!--<= link_to "退会する" , unsubscribe_path(current_user), class: 'btn btn-danger' %></th>-->
           </tr>
           <%= f.submit "更新" %>
         <% end %>
