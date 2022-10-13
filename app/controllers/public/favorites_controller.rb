@@ -1,11 +1,11 @@
 class Public::FavoritesController < ApplicationController
 
- before_action :set_course, except: [:index] #exceptは覗く時に活用
+ before_action :set_course, except: [:index]
  before_action :authenticate_user!
 
 def index
    redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
-   @favorites = Favorite.all
+   @favorites = current_user.favorites
 end
 
 def destroy
@@ -15,7 +15,7 @@ def destroy
 end
 
 def create
-  if @course.user_id != current_user.id   # 投稿者本人以外
+  if @course.user_id != current_user.id
      @favorite = Favorite.create(user_id: current_user.id, course_id: @course.id)
      @favorite.save
       redirect_to course_path(params[:course_id])
