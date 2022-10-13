@@ -2,6 +2,7 @@
 
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
+  before_action :user_state, only: [:create]
 
   # GET /resource/sign_in
   # def new
@@ -36,6 +37,19 @@ class Public::SessionsController < Devise::SessionsController
     user = User.guest
     sign_in user
     redirect_to user_path(user), notice: 'guestuserでログインしました。'
+  end
+
+  protected
+
+  def user_state
+    user = User.find_by(email: params[:user][:email])
+    if user.nil?
+      redirect_to root_path, notice: 'ログインに失敗しました。'
+    else
+      if user.is_deleted == true
+        redirect_to root_path, notice: 'ログインに失敗しました。'
+      end
+    end
   end
 
 end

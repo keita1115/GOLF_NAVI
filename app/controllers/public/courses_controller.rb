@@ -11,6 +11,7 @@ def index
 end
 
 def new
+  redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
   @course = Course.new
 end
 

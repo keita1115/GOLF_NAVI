@@ -4,6 +4,7 @@ class Public::FavoritesController < ApplicationController
  before_action :authenticate_user!
 
 def index
+   redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
    @favorites = Favorite.all
 end
 

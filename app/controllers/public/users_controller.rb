@@ -1,12 +1,13 @@
 class Public::UsersController < ApplicationController
 
  before_action :authenticate_user!
- before_action :ensure_guest_user, only: [:edit]
+# before_action :ensure_guest_user, only: [:edit]
 def index
 end
 
 def show
-   @user = User.find(params[:id])
+  redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
+  @user = User.find(params[:id])
 end
 
 def edit
@@ -19,13 +20,16 @@ def update
    redirect_to user_path(current_user)
 end
 
-# def withdrawal
+def unsubscribe
+end
+
+def withdrawal
   # @user = current_user
-  # @user.update(is_valid: false)
-  # reset_session
-  # flash[:notice] = "退会処理を行いました"
-  # redirect_to root_path
-# end
+  current_user.update(is_deleted: true)
+  reset_session
+  flash[:notice] = "退会処理を行いました"
+  redirect_to root_path
+end
 
 
 def user_params

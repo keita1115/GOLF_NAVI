@@ -30,10 +30,9 @@ Rails.application.routes.draw do
    root to: 'homes#top'
    get '/about' => 'homes#about'
    get 'searches' => 'courses#search'
-   resources :users do
-   get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
    patch 'users/withdrawal' => 'users#withdrawal', as: 'withdrawal'
- end
+   resources :users
+  # get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     resources :courses do
     resource :favorites, only: [ :create, :destroy]
     resources :comments, only: [ :create, :destroy]
