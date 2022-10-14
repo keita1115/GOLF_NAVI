@@ -5,7 +5,7 @@ class Public::FavoritesController < ApplicationController
 
 def index
    redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
-   @favorites = current_user.favorites
+   @favorites = current_user.favorites.page(params[:page]).per(12)
 end
 
 def destroy
