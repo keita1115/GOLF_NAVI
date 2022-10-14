@@ -1,11 +1,11 @@
    <!--検索機能-->
  <div class="container mt-5">
   <div class="row">
- 　 　<%= form_with url: searches_path, method: :get, local: true do |f| %>
+ 　　<%= form_with url: searches_path, method: :get, local: true do |f| %>
 　   <%= f.text_field :keyword, value: @keyword %>
   　  <%= f.submit "検索" %>
     <% end %>
-    </div>
+  </div>
     <div class="post-list">
     <% @courses.each do |course| %>
     <% end %>
