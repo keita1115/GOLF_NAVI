@@ -1,12 +1,14 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-3">
-      <% @all_ranks.each do |note|%>
-      
-      <% end %>
-      <!--部分テンプレート-->
-    <!--<= render "public/courses/genre_search", genres: @genres %>-->
-    </div>
+    <div class="col-md-3"><h4>ゴルフ場ランキング<i class="fa-solid fa-ranking-star"></i></h4>
+   <% @all_ranks.each.with_index(1) do |course, i| %>
+      第<%= i %>位<br>
+      <%= course.title %>
+      <%= link_to course_path(course) do %>
+      <%= image_tag course.image, size:"200x120" %>
+     <% end %>
+   <% end %>
+  </div>
 
     <div class="col-8 ml-2">
       <div class = "top-image ml-4">

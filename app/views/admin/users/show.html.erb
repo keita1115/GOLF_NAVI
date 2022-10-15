@@ -41,7 +41,7 @@
         <% @comments.each do |comment| %>
           <li class="list-group-item"%>
           <%= comment.comment %>
-          <%= link_to '削除', admin_user_comment_path(comment.user, comment), method: :delete, data: {confirm: "本当に削除しますか？"},class: 'btn btn-danger' %>
+          <%= link_to '削除', admin_user_comment_path(comment.user, comment), method: :delete, data: {confirm: "本当に削除しますか？"},class: 'btn btn-sm btn-danger' %>
         <% end %>
       </li>
     </ul>
