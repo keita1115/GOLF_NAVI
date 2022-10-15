@@ -1,11 +1,10 @@
-       <table>
+       <table class="table">
         <% course.comments.each do |comment| %>
           <tr>
             <td>
              <%= comment.user.name %>
             </td>
-            <td>
-              <%= comment.comment %>
+              <td style="word-wrap: break-word;"><%= comment.comment %>
             </td>
             <% if comment.user == current_user %>
              <td>

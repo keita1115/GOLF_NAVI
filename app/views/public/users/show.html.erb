@@ -19,17 +19,18 @@
       	  <th><%= @user.email %></th>
         </tr>
       </table>
-       <table class = "table">
+       <div class="col-8 ml-2">
+        <table class = "table">
         <% @courses.each do |course| %>
         <div class="mr-4 mt-4">
           <%= link_to course_path(course) do %>
             <% if course.image.attached? %>
-            <%= image_tag course.image, size:"150x120" %>
+             <%= image_tag course.image, size:"150x120" %>
+             <%= course.title %>
             <% else %>
-              <%= image_tag "e_others_501.jpeg" %>
+             <%= image_tag "e_others_501.jpeg" %>
            <% end %>
            <% end %>
-          <p class="text-center"><strong><%= course.title %></strong></p>
         </div>
        <% end %>
       </table>

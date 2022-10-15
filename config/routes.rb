@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     root to: 'homes#top'
     resources :courses
     resources :users do
-     resources :comments, only: [:destroy]
+    resources :comments, only: [:destroy]
     end
     resources :genres
 
