@@ -1,5 +1,5 @@
-class Public::SearchesController < ApplicationController
-  
+class Public::SearchesController < Public::ApplicationController
+
 def show
 end
 

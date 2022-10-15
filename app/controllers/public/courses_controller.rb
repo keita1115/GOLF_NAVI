@@ -1,4 +1,4 @@
-class Public::CoursesController < ApplicationController
+class Public::CoursesController < Public::ApplicationController
 
   before_action :authenticate_user!
 

@@ -3,10 +3,10 @@
     <div class="col-md-3"><h4>ゴルフ場ランキング<i class="fa-solid fa-ranking-star"></i></h4>
    <% @all_ranks.each.with_index(1) do |course, i| %>
       第<%= i %>位<br>
-      <%= course.title %>
       <%= link_to course_path(course) do %>
       <%= image_tag course.image, size:"200x120" %>
      <% end %>
+     <p class="text-center"><strong><%= course.title %></strong></p>
    <% end %>
   </div>
 

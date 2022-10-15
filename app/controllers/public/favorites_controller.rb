@@ -1,10 +1,9 @@
-class Public::FavoritesController < ApplicationController
+class Public::FavoritesController < Public::ApplicationController
 
  before_action :set_course, except: [:index]
  before_action :authenticate_user!
 
 def index
-   redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
    @favorites = current_user.favorites.page(params[:page]).per(12)
 end
 

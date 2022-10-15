@@ -1,4 +1,4 @@
-class Public::HomesController < ApplicationController
+class Public::HomesController < Public::ApplicationController
 
 def top
    @all_ranks = Course.find(Favorite.group(:course_id).order('count(course_id) desc').limit(3).pluck(:course_id))

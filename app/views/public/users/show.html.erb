@@ -20,7 +20,7 @@
         </tr>
       </table>
        <table class = "table">
-        <% @user.courses.each do |course| %>
+        <% @courses.each do |course| %>
         <div class="mr-4 mt-4">
           <%= link_to course_path(course) do %>
             <% if course.image.attached? %>
