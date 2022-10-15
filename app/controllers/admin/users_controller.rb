@@ -6,6 +6,7 @@ end
 
 def show
    @user = User.find(params[:id])
+   @comments = @user.comments
 end
 
 def edit
@@ -18,8 +19,9 @@ def update
     redirect_to admin_user_path(@user.id)
 end
 
- private
-  def user_params
-    params.require(:user).permit(:name, :email, :is_deleted)
-  end
+private
+ def user_params
+   params.require(:user).permit(:name, :email, :is_deleted)
+ end
+
 end

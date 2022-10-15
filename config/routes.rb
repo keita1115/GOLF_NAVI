@@ -21,9 +21,11 @@ Rails.application.routes.draw do
  namespace :admin do
     root to: 'homes#top'
     resources :courses
-    resources :users
+    resources :users do 
+      resources :comments, only: [:destroy]
+    end
     resources :genres
-    resources :comments
+    
   end
 
 
