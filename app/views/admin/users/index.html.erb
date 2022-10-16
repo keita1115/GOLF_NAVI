@@ -16,27 +16,27 @@
           <% @users.each do |user| %>
             <tr>
               <td>
-                <%= user.id %>
+               <%= user.id %>
               </td>
               <td>
-              <%= link_to admin_user_path(user) do%>
+                <%= link_to admin_user_path(user) do%>
                 <%= user.name %>
-              <% end %>
+                <% end %>
               </td>
               <td><%= user.email%></td>
-              <% if user.is_deleted == 'true'  %>
-          	    <th class = "text-success">
-          	      <%= user.is_deleted %>
-          	    </th>
-          	  <%else%>
-          	    <th class = "text-danger">
-          	      <%= user.is_deleted %>
-          	    </th>
-          	  <% end %>
-            </tr>
+               <% if user.is_deleted == 'true'  %>
+              <th class = "text-success">
+               <%= user.is_deleted %>
+               </th>
+               <%else%>
+              <th class = "text-danger">
+               <%= user.is_deleted %>
+              </th>
+            <% end %>
+              </tr>
           <% end %>
         </tbody>
       </table>
-        <p><%= paginate @users %></p>
+      <p><%= paginate @users %></p>
     </div>
   </div>
