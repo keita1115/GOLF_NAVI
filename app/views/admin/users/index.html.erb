@@ -16,7 +16,7 @@
           <% @users.each do |user| %>
             <tr>
               <td>
-               <%= user.id %>
+                <%= user.id %>
               </td>
               <td>
                 <%= link_to admin_user_path(user) do%>
@@ -24,13 +24,13 @@
                 <% end %>
               </td>
               <td><%= user.email%></td>
-               <% if user.is_deleted == 'true'  %>
+                <% if user.is_deleted? %>
               <th class = "text-success">
-               <%= user.is_deleted %>
-               </th>
-               <%else%>
+                退会済
+              </th>
+                <%else%>
               <th class = "text-danger">
-               <%= user.is_deleted %>
+                会員
               </th>
             <% end %>
               </tr>

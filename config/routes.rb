@@ -20,9 +20,10 @@ Rails.application.routes.draw do
 
  namespace :admin do
     root to: 'homes#top'
+    patch 'users/withdrawal' => 'users#withdrawal', as: 'withdrawal'
     resources :courses
     resources :users do
-    resources :comments, only: [:destroy]
+      resources :comments, only: [:destroy]
     end
     resources :genres
 
@@ -37,8 +38,8 @@ Rails.application.routes.draw do
    resources :users
   # get 'users/unsubscribe' => 'users#unsubscribe', as: 'unsubscribe'
     resources :courses do
-    resource :favorites, only: [ :create, :destroy]
-    resources :comments, only: [ :create, :destroy]
+      resource :favorites, only: [ :create, :destroy]
+      resources :comments, only: [ :create, :destroy]
     end
     resources :favorites, only: [:index]
     resources :searches
