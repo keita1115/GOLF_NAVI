@@ -20,30 +20,22 @@
             <th>ゴルフ場名</th>
             <td><%= @course.title %></td>
           </tr>
-
           <tr>
             <th>住所</th>
             <td><%= @course.address %></td>
           </tr>
-
           <tr>
             <th>ゴルフ場説明</th>
             <td><%= @course.body %></td>
           </tr>
-
           <tr>
             <th>スコア</th>
             <td><%= @course.score %></td>
           </tr>
-
           <tr>
             <div id = "favorite_buttons_<%= @course.id %>">
             <%= render "public/favorites/favorite", course: @course%>
           </tr>
-          <tr>
-            <%= render 'public/comments/comment_count', course: @course %>
-          </tr>
-
         </table>
       </div>
 
@@ -56,12 +48,15 @@
           <th><%= link_to "削除する", course_path(@course), method: :delete, data: {confirm:  "本当に削除しますか？"}, class: "btn btn-danger" %></th>
           <% end %>
         </table>
-         <div id="comment_list">
-         <%= render 'public/comments/comment_list', course: @course %>
+         <div id = "comment_count">
+          <%= render 'public/comments/comment_count', course: @course %>
+         <div id = "comment_list" class="mb-2 bg-light border" style="height: 20vh; overflow-y: scroll;">
+          <%= render 'public/comments/comment_list', course: @course %>
          </div>
-         <%= render 'public/comments/comment_form', course: @course, comment: @comment %>
+          <%= render 'public/comments/comment_form', course: @course, comment: @comment %>
        </div>
       </div>
-    </div>
+     </div>
+   </div>
   </div>
 </div>
