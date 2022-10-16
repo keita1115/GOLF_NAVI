@@ -21,7 +21,7 @@
              </li>
              <li>
                <%= link_to new_course_path,class: 'nav-link text-light' do%>
-                  <i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i>新規ゴルフ場投稿
+                <i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i>新規ゴルフ場投稿
                <% end %>
              </li>
              <li>
@@ -31,28 +31,28 @@
              </li>
              <li>
                <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do%>
-                  <i class="fas fa-sign-out-alt"></i>ログアウト
+                <i class="fas fa-sign-out-alt"></i>ログアウト
                <% end %>
              </li>
             <% elsif admin_signed_in? %>
              <li>
                <%= link_to admin_root_path,class: 'nav-link text-light' do%>
-                  <i class="fa-brands fa-gofore"></i>ゴルフ場一覧
+                <i class="fa-brands fa-gofore"></i>ゴルフ場一覧
                <% end %>
              </li>
              <li>
                <%= link_to admin_users_path,class: 'nav-link text-light' do%>
-                   <i class="fa-solid fa-user"></i>User一覧
+                <i class="fa-solid fa-user"></i>User一覧
                <% end %>
              </li>
              <li>
                <%= link_to admin_genres_path,class: 'nav-link text-light' do%>
-                  <i class="fa-solid fa-tag"></i>ジャンル一覧
+                <i class="fa-solid fa-tag"></i>ジャンル一覧
                <% end %>
              </li>
              <li>
                <%= link_to destroy_admin_session_path, method: :delete,class: 'nav-link text-light' do%>
-                   <i class="fas fa-sign-out-alt"></i>ログアウト
+                 <i class="fas fa-sign-out-alt"></i>ログアウト
                <% end %>
              </li>
             <% else %>
