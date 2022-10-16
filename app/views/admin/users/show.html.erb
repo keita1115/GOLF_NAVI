@@ -17,32 +17,32 @@
           </tr>
           <tr>
             <th>会員ステータス</th>
-		      <% if @user.is_deleted == 'true'  %>
-			    <th class = "text-success">
-			    <%= @user.is_deleted %>
-		      </th>
-			    <%else%>
-		   <th class = "text-danger">
-			    <%= @user.is_deleted %>
-		   </th>
-		     <% end %>
-		   <table class="table">
-         <th><%= link_to '編集する', edit_admin_user_path(@user), class: "btn btn-sm btn-success" %></th>
-         <th><%= link_to "退会する" , withdrawal_path, method: :patch, data: {confirm: 'アカウントを削除してもよろしいですか？'}, class: 'btn btn-sm btn-danger' %></th>
-       </table>
-		   </tr>
-	   </thead>
-	  </table>
-	</div>
+            <% if @user.is_deleted == 'true'  %>
+              <th class = "text-success">
+                <%= @user.is_deleted %>
+              </th>
+            <%else%>
+              <th class = "text-danger">
+                <%= @user.is_deleted %>
+              </th>
+            <% end %>
+            <table class="table">
+              <th><%= link_to '編集する', edit_admin_user_path(@user), class: "btn btn-sm btn-success" %></th>
+              <th><%= link_to "退会する" , withdrawal_path, method: :patch, data: {confirm: 'アカウントを削除してもよろしいですか？'}, class: 'btn btn-sm btn-danger' %></th>
+            </table>
+          </tr>
+        </thead>
+      </table>
+    </div>
   </div>
- <div class='row'>
+  <div class='row'>
     <div class='col-md-8 offset-2'>
-	  <h4><i class="far fa-comment-alt"></i><b><%=@user.name%></b> さんのコメント
-         <ul class="list-group">
+      <h4><i class="far fa-comment-alt"></i><b><%=@user.name%></b> さんのコメント</h4>
+      <ul class="list-group">
         <% @comments.each do |comment| %>
-         <li class="list-group-item"%>
-         <%= comment.comment %>
-         <%= link_to '削除', admin_user_comment_path(comment.user, comment), method: :delete, data: {confirm: "本当に削除しますか？"},class: 'btn btn-sm btn-danger' %>
+          <li class="list-group-item"%>
+            <%= comment.comment %>
+            <%= link_to '削除', admin_user_comment_path(comment.user, comment), method: :delete, data: {confirm: "本当に削除しますか？"},class: 'btn btn-sm btn-danger' %>
         <% end %>
       </li>
     </ul>
