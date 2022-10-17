@@ -50,12 +50,12 @@
         </table>
          <div id = "comment_count">
           <%= render 'public/comments/comment_count', course: @course %>
+         </div>
          <div id = "comment_list" class="mb-2 bg-light border" style="height: 20vh; overflow-y: scroll;">
           <%= render 'public/comments/comment_list', course: @course %>
          </div>
           <%= render 'public/comments/comment_form', course: @course, comment: @comment %>
        </div>
-      </div>
      </div>
    </div>
   </div>

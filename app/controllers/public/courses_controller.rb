@@ -1,4 +1,4 @@
-class Public::CoursesController < Public::ApplicationController
+class Public::CoursesController < ApplicationController
 
   before_action :authenticate_user!
 
@@ -52,7 +52,7 @@ end
 
 def search
   @genres = Genre.all
-  @courses = Course.search(params[:keyword]).page(params[:page]).per(9)
+  @courses = Course.search(params[:keyword]).page(params[:page])
   @keyword = params[:keyword]
   render "index"
 end
