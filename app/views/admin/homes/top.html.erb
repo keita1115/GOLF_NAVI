@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h3 class="my-4 mt-5">ゴルフ場一覧</h3>
+
+      <%= link_to new_admin_course_path, style:"font-size: 35px;" do %>
+      <% end %>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>ゴルフ場ID</th>
+            <th>ゴルフ場名</th>
+            <th>ジャンル</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @courses.each do |course| %>
+          <tr>
+            <!--コースID-->
+            <td><%= course.id %></td>
+            <!--ゴルフ場名-->
+            <td>
+              <%= link_to admin_course_path(course.id) do %>
+              <%= course.title %>
+              <% end %>
+            </td>
+            <!--ジャンル-->
+            <td><%= course.genre.name %></td>
+          <% end %>
+        </tbody>
+      </table>
+        <!--ページネーション-->
+        <%= paginate @courses %>
+    </div>
+  </div>
+</div>
