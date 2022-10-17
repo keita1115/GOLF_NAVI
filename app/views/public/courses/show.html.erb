@@ -33,6 +33,7 @@
             <td><%= @course.score %></td>
           </tr>
           <tr>
+            <!--いいね機能非同期-->
             <div id = "favorite_buttons_<%= @course.id %>">
             <%= render "public/favorites/favorite", course: @course%>
           </tr>
@@ -48,6 +49,7 @@
           <th><%= link_to "削除する", course_path(@course), method: :delete, data: {confirm:  "本当に削除しますか？"}, class: "btn btn-danger" %></th>
           <% end %>
         </table>
+          <!--コメント非同期-->
          <div id = "comment_count">
           <%= render 'public/comments/comment_count', course: @course %>
          </div>
