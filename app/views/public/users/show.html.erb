@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-8 offset-2">
       <h3 class="my-4 mt-5">MY PAGE</h3>
-　　　<table class="table table-hover">
+     <table class="table table-hover">
         <thead>
           <th>登録情報</th>
-          <th><%= link_to '編集する', edit_user_path, class: "btn btn-sm btn-success" %></th>
-          <th><%= link_to "退会する" , withdrawal_path, method: :patch, data: {confirm: 'アカウントを削除してもよろしいですか？'}, class: 'btn btn-sm btn-danger' %></th>
+            <th><%= link_to '編集する', edit_user_path, class: "btn btn-sm btn-success" %></th>
+            <th><%= link_to "退会する" , withdrawal_path, method: :patch, data: {confirm: 'アカウントを削除してもよろしいですか？'}, class: 'btn btn-sm btn-danger' %></th>
         </thead>
       </table>
       <table class='table table-hover'>
@@ -25,12 +25,12 @@
         <div class="mr-4 mt-4">
           <%= link_to course_path(course) do %>
             <% if course.image.attached? %>
-             <%= image_tag course.image, size:"150x120" %>
-             <%= course.title %>
+              <%= image_tag course.image, size:"150x120" %>
+              <%= course.title %>
             <% else %>
-             <%= image_tag "e_others_501.jpeg" %>
+              <%= image_tag "e_others_501.jpeg" %>
            <% end %>
-           <% end %>
+        <% end %>
         </div>
        <% end %>
       </table>
