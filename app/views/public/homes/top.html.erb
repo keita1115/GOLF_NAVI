@@ -5,7 +5,11 @@
    <% @all_ranks.each.with_index(1) do |course, i| %>
       第<%= i %>位<br>
       <%= link_to course_path(course) do %>
-      <%= image_tag course.image, size:"200x120" %>
+      <% if course.image.attached? %>
+       <%= image_tag course.image, size:"200x120" %>
+      <% else %>
+       <%= image_tag "e_others_501.jpg", size:"200x120"%>
+      <% end %>
      <% end %>
      <p class="text-center"><strong><%= course.title %></strong></p>
    <% end %>
