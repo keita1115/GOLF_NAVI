@@ -6,7 +6,11 @@
         <% @favorites.each do |favorite| %>
           <div class="mr-4 mt-4">
             <%= link_to course_path(favorite.course_id) do %>
-              <%= image_tag favorite.course.image, size:"150x120" %>
+             <% if favorite.course.image.attached? %>
+               <%= image_tag favorite.course.image, size:"150x120" %>
+             <% else %>
+               <%= image_tag "e_others_501.jpg", size:"150x120"%>
+             <% end %>
             <% end %>
             <p class="text-center"><strong><%= favorite.course.title %></strong></p>
           </div>
