@@ -14,7 +14,7 @@ def favorites?(user)
 end
 
 def self.search(keyword)
-  where(["title like? OR body like?", "%#{keyword}%", "%#{keyword}%"])
+  where(["title like? OR body like? OR address like? OR score like?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
 end
 
 end
