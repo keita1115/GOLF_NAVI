@@ -22,11 +22,11 @@
           </tr>
           <tr>
             <th>住所</th>
-            <td><%= @course.address %></td>
+            <td><%= safe_join(@course.address.split("\n"),tag(:br)) %></td>
           </tr>
           <tr>
             <th>ゴルフ場説明</th>
-            <td><%= @course.body %></td>
+            <td><%= safe_join(@course.body.split("\n"),tag(:br)) %></td>
           </tr>
           <tr>
             <th>ゴルフ歴・スコア</th>
