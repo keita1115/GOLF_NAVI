@@ -7,48 +7,56 @@
       <!--form_with記述-->
       <%= form_with model: @course, url: courses_path, method: :post, local: true do |f| %>
 
-        <!--商品画像-->
-        <div class="field text-center mt-4">
-          <%= f.label :"ゴルフ場画像" %>
-          <%= f.file_field :image, accept: "image/*" %>
+      <table class="table table-borderless table-sm">
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ゴルフ場画像" %></td>
+            <td><%= f.file_field :image, accept: "image/*" %></td>
+          </tr>
         </div>
 
-        <!--ゴルフ場名-->
-        <div class="field text-center mt-4">
-          <%= f.label :"ゴルフ場名", class: "mr-3"%>
-          <%= f.text_field :title %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ゴルフ場名", class: "mr-3"%></td>
+            <td><%= f.text_field :title %></td>
+          </tr>
         </div>
 
-        <!--住所-->
-        <div class="field text-center mt-4">
-          <%= f.label :"住所", class: "mr-3"%>
-          <%= f.text_area :address %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"住所", class: "mr-3"%></td>
+            <td><%= f.text_area :address %></td>
+          </tr>
         </div>
 
-        <!--スコア-->
-        <div class="field text-center mt-4">
-          <%= f.label :"ゴルフ歴・スコア", class: "mr-3" %>
-          <%= f.text_field :score %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ゴルフ歴・スコア", class: "mr-3" %></td>
+            <td><%= f.text_field :score %></td>
+          </tr>
         </div>
 
-        <!--ゴルフ場概要-->
-        <div class="field text-center mt-4">
-          <%= f.label :"ゴルフ場概要", class: "mr-3" %>
-          <%= f.text_area :body %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ゴルフ場概要", class: "mr-3" %></td>
+            <td><%= f.text_area :body %></td>
+          </tr>
         </div>
 
-        <!--ジャンル-->
-        <div class="field text-center mt-4">
-          <%= f.label :"エリア" %>
-          <%= f.collection_select :genre_id, Genre.all, :id, :name %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"エリア" %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
+          </tr>
         </div>
 
         <!--新規登録-->
-        <div class="actions text-center mt-4">
-          <!--<= f.submit "新規登録", class: 'btn btn-success' >-->
-          <%= f.submit "新規登録",class: "btn btn-success px-5 mt-4" %>
+        <div class="actions">
+          <td></td>
+           <td><%= f.submit "新規登録",class: "btn btn-success px-5 mt-4" %></td>
         </div>
+      </table>
       <% end %>
-     </div>
-   </div>
- </div>
+    </div>
+  </div>
+</div>
