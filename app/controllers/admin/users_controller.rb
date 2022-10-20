@@ -23,9 +23,8 @@ class Admin::UsersController < ApplicationController
     # @user = current_user
     @user = User.find(params[:id])
     @user.update!(is_deleted: true)
-    reset_session
     flash[:notice] = "退会処理を行いました"
-    redirect_to root_path
+    redirect_to admin_users_path
   end
 
   private
