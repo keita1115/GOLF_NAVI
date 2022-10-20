@@ -4,11 +4,11 @@
       <h3 class="my-4 mt-5">新規ゴルフ場投稿</h3>
 
 
-      <!--form_with記述-->
+      
       <%= form_with model: @course, url: courses_path, method: :post, local: true do |f| %>
 
       <table class="table table-borderless table-sm">
-        <div class="field">
+       <div class="field">
           <tr>
             <td><%= f.label :"ゴルフ場画像" %></td>
             <td><%= f.file_field :image, accept: "image/*" %></td>
@@ -50,7 +50,7 @@
           </tr>
         </div>
 
-        <!--新規登録-->
+        
         <div class="actions">
           <td></td>
            <td><%= f.submit "新規登録",class: "btn btn-success px-5 mt-4" %></td>

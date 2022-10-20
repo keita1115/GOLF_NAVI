@@ -3,48 +3,60 @@
     <div class="col-md-8 offset-2">
       <h3 class="my-4 mt-5">ゴルフ場編集</h3>
 
-      <!--form_with記述-->
+
       <%= form_with model: @course, url: course_path(@course), method: :patch, local: true do |f| %>
 
-      <!--ゴルフ場画像-->
-      <div class="field text-center mt-4">
-        <%= f.label :"ゴルフ場画像" %>
-        <%= f.file_field :image, accept: "image/*" %>
-      </div>
 
-      <!--ゴルフ場名-->
-      <div class="field text-center mt-4">
-        <%= f.label :"ゴルフ場名", class: "mr-3" %>
-        <%= f.text_field :title %>
-      </div>
+      <table class="table table-borderless table-sm">
+         <div class="field">
+           <tr>
+              <td><%= f.label :"ゴルフ場画像" %></td>
+              <td><%= f.file_field :image, accept: "image/*" %></td>
+           </tr>
+         </div>
 
-      <div class="field text-center mt-4">
-        <%= f.label :"住所", class: "mr-3" %>
-        <%= f.text_area :address %>
-      </div>
+         <div class="field">
+           <tr>
+             <td><%= f.label :"ゴルフ場名", class: "mr-3" %></td>
+             <td><%= f.text_field :title %></td>
+           </tr>
+         </div>
 
-      <!--スコア-->
-      <div class="field text-center mt-4">
-        <%= f.label :"ゴルフ歴・スコア", class: "mr-3" %>
-        <%= f.text_field :score %>
-      </div>
+         <div class="field">
+           <tr>
+             <td><%= f.label :"住所", class: "mr-3" %></td>
+             <td><%= f.text_area :address %></td>
+           </tr>
+        </div>
 
-      <div class="field text-center mt-4">
-        <%= f.label :"ゴルフ場概要", class: "mr-3" %>
-        <%= f.text_area :body %>
-      </div>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ゴルフ歴・スコア", class: "mr-3" %></td>
+            <td><%= f.text_field :score %></td>
+          </tr>
+        </div>
 
-      <!--ジャンル--><!--Q:ジャンルを選択するフォームがわからない-->
-      <div class="field text-center mt-4">
-        <%= f.label :"エリア", class: "mr-3" %>
-        <%= f.collection_select :genre_id, Genre.all, :id, :name %>
-      </div>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"ゴルフ場概要", class: "mr-3" %></td>
+            <td><%= f.text_area :body %></td>
+          </tr>
+        </div>
 
-      <!--変更ボタン-->
-     <div class="actions text-center mt-4">
-        <%= f.submit "変更を保存", class: "btn btn-primary" %>
-     </div>
-     <% end %>
+        <div class="field">
+          <tr>
+            <td><%= f.label :"エリア", class: "mr-3" %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name %></td>
+          </tr>
+        </div>
+
+
+        <div class="actions">
+          <td></td>
+            <td><%= f.submit "変更を保存", class: "btn btn-primary" %></td>
+        </div>
+      </table>
+      <% end %>
     </div>
   </div>
 </duv>
