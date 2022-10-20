@@ -6,7 +6,7 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @comments = @user.comments
+    @comments = @user.comments.page(params[:page]).per(3)
   end
 
   def edit

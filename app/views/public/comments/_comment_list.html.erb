@@ -4,7 +4,8 @@
             <td>
              <%= comment.user.name %>
             </td>
-              <td style="word-wrap: break-word;"><%= comment.comment %>
+              <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+              <td style="word-wrap: break-word;"><%= simple_format(comment.comment) %>
             </td>
             <% if comment.user == current_user %>
              <td>
