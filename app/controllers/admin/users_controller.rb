@@ -20,7 +20,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    # @user = current_user
     @user = User.find(params[:id])
     @user.update!(is_deleted: true)
     flash[:notice] = "退会処理を行いました"
