@@ -1,4 +1,5 @@
 class Public::CommentsController < Public::ApplicationController
+  before_action :authenticate_user!
 
   def create
     @course = Course.find(params[:course_id])
@@ -6,14 +7,12 @@ class Public::CommentsController < Public::ApplicationController
     @comment.course_id = @course.id
     @comment.user_id = current_user.id
     @comment.save
-    #render :comment
   end
 
   def destroy
     course = Comment.find(params[:id])
     course.destroy
     @course = Course.find(params[:course_id])
-    #render :comment
   end
 
   private
