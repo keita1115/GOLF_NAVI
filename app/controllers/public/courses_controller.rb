@@ -19,8 +19,11 @@ class Public::CoursesController < ApplicationController
 
   def create
     @course = Course.new(course_params)
-    @course.save
-    redirect_to courses_path
+     if @course.save
+       redirect_to courses_path
+     else
+       render :new
+     end
   end
 
   def show
@@ -36,8 +39,11 @@ class Public::CoursesController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
-    @course.update(course_params)
-    redirect_to course_path(@course.id)
+     if @course.update(course_params)
+       redirect_to course_path(@course.id)
+     else
+       render :edit
+     end
   end
 
   def destroy
