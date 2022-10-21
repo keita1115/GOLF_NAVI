@@ -2,6 +2,8 @@ class Course < ApplicationRecord
   has_one_attached :image
 
   validates :title, presence: true
+  validates :address, presence: true
+  validates :body, presence: true
 
   belongs_to :user, optional: true
   belongs_to :genre, optional: true
