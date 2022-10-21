@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 offset-2">
+    <div class="col-md-8 offset-3">
       <h3 class="my-4 mt-5">新規ゴルフ場投稿</h3>
 
 
-      
+
       <%= form_with model: @course, url: courses_path, method: :post, local: true do |f| %>
 
       <table class="table table-borderless table-sm">
@@ -50,7 +50,7 @@
           </tr>
         </div>
 
-        
+
         <div class="actions">
           <td></td>
            <td><%= f.submit "新規登録",class: "btn btn-success px-5 mt-4" %></td>
