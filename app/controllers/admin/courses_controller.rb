@@ -1,4 +1,5 @@
 class Admin::CoursesController < ApplicationController
+  before_action :authenticate_admin!
 
   def show
     @course = Course.find(params[:id])
