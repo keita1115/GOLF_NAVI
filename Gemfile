@@ -65,6 +65,8 @@ gem 'pry-rails'
 
 gem 'rails-i18n'
 
+gem 'bootstrap4-kaminari-views'
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

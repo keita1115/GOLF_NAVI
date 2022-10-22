@@ -6,7 +6,7 @@ class Public::FavoritesController < Public::ApplicationController
   def index
     @favorites = current_user.favorites.page(params[:page]).per(12)
   end
-  
+
   def destroy
     @favorite = Favorite.find_by(user_id: current_user.id, course_id: @course.id)
     @favorite.destroy
@@ -24,5 +24,5 @@ class Public::FavoritesController < Public::ApplicationController
   def set_course
     @course = Course.find(params[:course_id])
   end
-  
+
 end

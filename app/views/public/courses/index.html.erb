@@ -7,17 +7,14 @@
     <% end %>
   </div>
 
-<div class="container mt-5">
+<div class="container mt-4">
   <div class="row">
     <div class="col-md-3">
       <!--部分テンプレート-->
       <%= render "public/courses/genre_search", genres: @genres %>
     </div>
     <div class="col-8 ml-2">
-      <!--countメソッドの使い方-->
-      <h3 class="mb-4">ゴルフ場一覧 </h3>
-
-      <!--ゴルフ場一覧-->
+      <h3 class="mb-4">ゴルフ場一覧</h3>
       <div class="contents" style="display:flex; flex-wrap:wrap;">
         <% @courses.each do |course| %>
           <div class="mr-4 mt-4">
@@ -32,7 +29,7 @@
           </div>
         <% end %>
       </div>
-       <p class="text-center"><strong> <%= paginate @courses %></strong></p>
+      <p class="text-center"><strong><%= paginate @courses, theme: 'twitter-bootstrap-4'%></strong></p>
     </div>
   </div>
 </div>
