@@ -1,0 +1,9 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       name: 名前
+     course:
+       title: ゴルフ場名
+       address: 住所
+       body: ゴルフ場概要
