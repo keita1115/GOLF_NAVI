@@ -7,7 +7,7 @@ class Public::UsersController < Public::ApplicationController
   def show
     redirect_to root_path, notice: 'ゲストユーザーはこの操作は出来ません。' if current_user.name == 'guestuser'
     @user = User.find(params[:id])
-    @courses = @user.courses.page(params[:page]).per(9)
+    @courses = @user.courses.page(params[:page]).per(6)
   end
 
   def edit
