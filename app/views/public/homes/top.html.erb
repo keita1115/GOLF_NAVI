@@ -1,7 +1,7 @@
 <!--ランキング-->
 <div class="container mt-5">
   <div class="row">
-    <div class="col-md-3"><h4>ゴルフ場ランキング<i class="fa-solid fa-ranking-star"></i></h4>
+    <div class="col-md-3"><h4>ゴルフ場ランキング<i class="fa-solid fa-crown"></i></h4>
    <% @all_ranks.each.with_index(1) do |course, i| %>
       第<%= i %>位<br>
       <%= link_to course_path(course) do %>
