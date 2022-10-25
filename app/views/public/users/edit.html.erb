@@ -9,8 +9,8 @@
             <%= f.text_field :name, autofocus: true, id:"user_name", placeholder:"名前"%>
           </div>
           <tr class="form-group">
-           <th><%= f.label :"メールアドレス"%></th>
-           <th><%= f.email_field :email,autofocus: true, class: "form-control user.email" %></th>
+            <th><%= f.label :"メールアドレス"%></th>
+            <th><%= f.email_field :email,autofocus: true, class: "form-control user.email" %></th>
           </tr>
           <%= f.submit "更新" %>
         <% end %>

@@ -3,11 +3,9 @@
     <div class="col-md-8 offset-3">
       <h3 class="my-4 mt-5">ゴルフ場編集</h3>
 
-
 　　　<%= render 'public/courses/errors', course: @course %>
 
       <%= form_with model: @course, url: course_path(@course), method: :patch, local: true do |f| %>
-
 
       <table class="table table-borderless table-sm">
          <div class="field">
@@ -60,4 +58,4 @@
       <% end %>
     </div>
   </div>
-</duv>
+</div>

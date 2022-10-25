@@ -1,17 +1,17 @@
-      <table class="table">
-        <% course.comments.each do |comment| %>
-          <tr>
-            <td>
-             <%= comment.user.name %>
-            </td>
-              <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
-              <td style="word-wrap: break-word;"><%= simple_format(comment.comment) %>
-            </td>
-            <% if comment.user == current_user %>
-             <td>
-               <%= link_to "削除", course_comment_path(comment.course, comment), method: :delete, remote: true, class:"btn btn-danger" %>
-             </td>
-            <% end %>
-          </tr>
-        <% end %>
-      </table>
+<table class="table">
+  <% course.comments.each do |comment| %>
+    <tr>
+      <td>
+       <%= comment.user.name %>
+      </td>
+        <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+        <td style="word-wrap: break-word;"><%= simple_format(comment.comment) %>
+      </td>
+      <% if comment.user == current_user %>
+       <td>
+         <%= link_to "削除", course_comment_path(comment.course, comment), method: :delete, remote: true, class:"btn btn-danger" %>
+       </td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
