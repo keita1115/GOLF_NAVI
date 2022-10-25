@@ -14,13 +14,12 @@
        <%= render "layouts/header" %>
 
        <% unless flash[:notice].nil? %>
-         <div class="text-danger">
+         <div class="text-black">
            <%= flash[:notice] %>
          </div>
        <% end %>
-
       <main>
-     <%= yield %>
-    </main>
-  </body>
+        <%= yield %>
+      </main>
+   </body>
 </html>

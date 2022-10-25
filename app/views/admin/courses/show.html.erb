@@ -32,12 +32,13 @@
             <th>ゴルフ歴・スコア</th>
             <td><%= @course.score %></td>
           </tr>
-
-       <div class="text-center">
-        <table class="table">
-          <!--削除ボタン-->
-          <th><%= link_to "削除する", admin_course_path(@course), method: :delete, data: {confirm:  "本当に削除しますか？"}, class: "btn btn-danger" %></th>
         </table>
+
+         <div class="text-center">
+          <table class="table">
+            <th><%= link_to "削除する", admin_course_path(@course), method: :delete, data: {confirm:  "本当に削除しますか？"}, class: "btn btn-danger" %></th>
+          </table>
+        </div>
       </div>
     </div>
   </div>
