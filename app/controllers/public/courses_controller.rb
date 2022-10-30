@@ -3,12 +3,12 @@ class Public::CoursesController < ApplicationController
 
   def index
       @genres = Genre.all
-   if params[:genre_id]
+    if params[:genre_id]
       @genre = Genre.find(params[:genre_id])
       @courses = @genre.courses.page(params[:page]).per(9)
-   else
+    else
       @courses = Course.all.page(params[:page]).per(9)
-   end
+    end
   end
 
   def new
