@@ -4,32 +4,32 @@
       <h3 class="my-4 mt-5">user一覧</h3>
 
        <table class="table table">
-            <thead>
-              <tr>
-                <th>UserID</th>
-                <th>氏名</th>
-                <th>メールアドレス</th>
-                <th>ステータス</th>
-              </tr>
-            </thead>
+          <thead>
+            <tr>
+              <th>UserID</th>
+              <th>氏名</th>
+              <th>メールアドレス</th>
+              <th>ステータス</th>
+            </tr>
+          </thead>
           <tbody>
            <% @users.each do |user| %>
-             <tr>
-               <td>
-                 <%= user.id %>
-               </td>
-               <td>
-                 <%= link_to admin_user_path(user) do%>
-                   <%= user.name %>
-                 <% end %>
-               </td>
-               <td><%= user.email%></td>
-                <% if user.is_deleted == true %>
-                  <td class="text-secondary font-weight-bold">退会</td>
-                <% else %>
-                  <td class="text-primary font-weight-bold">有効</td>
-                <% end %>
-               </tr>
+           <tr>
+             <td>
+               <%= user.id %>
+             </td>
+             <td>
+               <%= link_to admin_user_path(user) do%>
+                 <%= user.name %>
+               <% end %>
+             </td>
+             <td><%= user.email%></td>
+              <% if user.is_deleted == true %>
+                <td class="text-secondary font-weight-bold">退会</td>
+              <% else %>
+                <td class="text-primary font-weight-bold">有効</td>
+              <% end %>
+             </tr>
            <% end %>
           </tbody>
        </table>
