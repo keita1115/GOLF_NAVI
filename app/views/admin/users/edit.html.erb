@@ -16,6 +16,10 @@
              <th><%= f.email_field :email,autofocus: true, class: "form-control user.email" %></th>
            </tr>
            <tr class="form-group">
+             <th><%= f.radio_button :is_deleted, false, checked: true %>有効</th>
+             <th><%= f.radio_button :is_deleted, true %>退会</th>
+           </tr>
+           <tr class="form-group">
              <th></th>
              <th><%= f.submit "変更する", class: 'btn btn-success' %></th>
            </tr>

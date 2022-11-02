@@ -20,12 +20,6 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_user_path(@user.id)
   end
 
-  def destroy
-    @user = User.find(params[:id])
-    @user.update!(is_deleted: true)
-    flash[:notice] = "退会処理を行いました"
-    redirect_to admin_users_path
-  end
 
   private
    def user_params
