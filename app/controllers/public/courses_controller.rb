@@ -1,5 +1,6 @@
 class Public::CoursesController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
       @genres = Genre.all
@@ -63,6 +64,13 @@ class Public::CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:title, :body, :image, :user_id, :genre_id, :score, :address).merge(user_id: current_user.id)
+  end
+
+  def ensure_correct_user
+    @course = Course.find(params[:id])
+    unless @course.user == current_user
+       redirect_to courses_path
+    end
   end
 
 end

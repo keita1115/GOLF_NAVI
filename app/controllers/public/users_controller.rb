@@ -1,5 +1,6 @@
 class Public::UsersController < Public::ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_correct_user, only: [:show, :edit, :update, :withdrawal, :unsubscribe]
 
   def index
   end
@@ -43,6 +44,13 @@ class Public::UsersController < Public::ApplicationController
    if @user.name == "guestuser"
      redirect_to user_path(current_user) , notice: 'ゲストユーザーはプロフィール編集画面へ遷移できません。'
    end
+  end
+
+  def ensure_correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+       redirect_to courses_path
+    end
   end
 
 end
