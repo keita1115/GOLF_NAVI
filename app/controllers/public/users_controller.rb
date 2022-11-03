@@ -1,6 +1,6 @@
 class Public::UsersController < Public::ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:show, :edit, :update, :withdrawal, :unsubscribe]
+  before_action :ensure_correct_user, only: [:show, :edit, :update]
 
   def index
   end
