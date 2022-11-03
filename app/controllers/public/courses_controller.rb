@@ -69,7 +69,7 @@ class Public::CoursesController < ApplicationController
   def ensure_correct_user
     @course = Course.find(params[:id])
     unless @course.user == current_user
-       redirect_to courses_path
+      redirect_to courses_path
     end
   end
 

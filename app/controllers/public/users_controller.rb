@@ -49,7 +49,7 @@ class Public::UsersController < Public::ApplicationController
   def ensure_correct_user
     @user = User.find(params[:id])
     unless @user == current_user
-       redirect_to courses_path
+      redirect_to courses_path
     end
   end
 
