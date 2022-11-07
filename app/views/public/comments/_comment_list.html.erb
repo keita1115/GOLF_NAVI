@@ -2,7 +2,7 @@
   <% course.comments.each do |comment| %>
     <tr>
       <td>
-       <%= comment.user.name %>
+        <%= comment.user.name %>
       </td>
         <td><%= comment.created_at.strftime('%Y/%m/%d') %></td>
         <td style="word-wrap: break-word;"><%= simple_format(comment.comment) %>
