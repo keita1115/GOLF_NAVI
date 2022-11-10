@@ -39,7 +39,6 @@
 ER図URL：https://drive.google.com/file/d/1WG5J_EKk4s-xiWQeiN0sL9yfemgRqcsi/view?usp=sharing<br>
 テーブル定義書：https://docs.google.com/spreadsheets/d/1KfAtXo4vEFuJm6YXE7iVcBSidC06-FvBeeFuvqd1Gl8/edit?usp=sharing<br>
 詳細設計書：https://docs.google.com/spreadsheets/d/1tKAFMyvoALK7aJXAIUct_NAhuRv5E17PoOBScTK7vxU/edit?usp=sharing<br>
-<br>
 
 ## 開発環境
 - OS：Linux(CentOS)
