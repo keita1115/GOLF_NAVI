@@ -48,4 +48,4 @@
 - IDE：Cloud9
 
 ## 使用素材
-*[FontAwesome](https://fontawesome.com/)
+* [FontAwesome](https://fontawesome.com/)
